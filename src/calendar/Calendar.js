@@ -45,7 +45,6 @@ const formatMonth = (date: Moment): string => date.format('MMMM');
 
 const formatYear = (date: Moment): string => date.format('YYYY');
 
-
 export default class Calendar extends PureComponent {
 
   props: Props;
@@ -288,12 +287,10 @@ export default class Calendar extends PureComponent {
   };
 
   render() {
-
     const {
       dates,
       currentDateIndex,
     } = this.state;
-
     const visibleMonthAndYear = this.getVisibleMonthAndYear();
 
     return (
@@ -305,11 +302,12 @@ export default class Calendar extends PureComponent {
           ref={scrollView => { this._scrollView = scrollView; }}
           // Enable horizontal scrolling
           horizontal={true}
-          // Hide horizontal
+          // Hide horizontal scroll indicators
           showsHorizontalScrollIndicator={false}
           // Do not adjust content automatically
           automaticallyAdjustContentInsets={false}
-          scroll indicators
+          scrollEventThrottle={100}
+          onScroll={this.onScroll}
         >
           <Dates
             dates={dates}
