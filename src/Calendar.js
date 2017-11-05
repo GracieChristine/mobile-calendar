@@ -93,9 +93,13 @@ export default class Calendar extends PureComponent {
         </Text>
         <ScrollView
           ref={scrollView => { this._scrollView = scrollView; }}
-          horizontal={true}                         // Enable horizontal scrolling
-          showsHorizontalScrollIndicator={false}    // Hide horizontal scroll indicators
-          automaticallyAdjustContentInsets={false}  // Do not adjust content automatically
+          // Enable horizontal scrolling
+          horizontal={true}
+          // Hide horizontal
+          showsHorizontalScrollIndicator={false}
+          scroll indicators
+          // Do not adjust content automatically
+          automaticallyAdjustContentInsets={false}
         >
           <Text>{JSON.stringify(this.state.dates, null, 2)}</Text>
         </ScrollView>
