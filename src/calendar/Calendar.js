@@ -324,7 +324,7 @@ export default class Calendar extends PureComponent {
 
 const styles = StyleSheet.create({
   visibleMonthAndYear: {
-    color: 'rgba(255, 255, 255, 0.5)',
+    color: 'rgb(255, 255, 255)',
     paddingHorizontal: 15,
     textAlign: 'left',
   },
