@@ -25,6 +25,7 @@ const FAKE_EVENTS: Array<EventType> = (() => {
   }));
 })();
 
+
 // Filter events by date
 const filterEvents = (date: Moment): ?Array<EventType> =>
   FAKE_EVENTS.filter(event => event.date.isSame(date, 'day'));
